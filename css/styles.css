@@ -708,6 +708,7 @@ img {
 }
 
 .modal-label:nth-child(5) {
+  position: relative;
   flex-direction: row;
   align-items: center;
   gap: 0;
@@ -776,18 +777,24 @@ img {
   appearance: none;
 }
 
-.modal-checkbox:checked + .checkbox-icon {
-  border-color: transparent;
-  background-image: url("../images/click.svg");
-  background-origin: border-box;
-}
-
 .checkbox-icon {
   width: 16px;
   height: 16px;
   margin-right: 8px;
   border: 1.25px solid #2e2f42;
   border-radius: 2px;
+}
+
+.click-icon {
+  position: absolute;
+  padding: 4px 3px;
+  border-radius: 2px;
+  fill: transparent;
+}
+
+.modal-checkbox:checked ~ .click-icon {
+  fill: #f4f4fd;
+  background-color: var(--hover-color);
 }
 
 .modal-link {
